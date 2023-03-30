@@ -1,0 +1,52 @@
+package com.javahungry;
+import java.io.IOException;
+import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
+
+public class Activator {
+
+    public static void main(String[] args) throws IOException, InterruptedException {
+        int userSelected;
+        Runtime rt = Runtime.getRuntime();
+        do {
+            userSelected = MenuData();
+            switch (userSelected) {
+                case 1:
+                    rt.exec("cmd.exe /k \"slmgr /ipk W269N-WFGWX-YVC9B-4J6C9-T83GX");
+                    break;
+                case 2:
+                    rt.exec("cmd.exe /k \"slmgr /ipk MH37W-N47XK-V7XM9-C7227-GCQG9");
+                    break;
+                case 3:
+                    rt.exec("cmd.exe /k \"slmgr /ipk TX9XD-98N7V-6WMQ6-BX7FG-H8Q99");
+                    break;
+                case 4:
+                    rt.exec("cmd.exe /k \"slmgr /ipk 3KHY7-WNT83-DGQKR-F7HPR-844BM");
+                    break;
+                case 5:
+                    rt.exec("cmd.exe /k \"slmgr /ipk NPPR9-FWDCX-D2C8J-H872K-2YT43");
+                    break;
+            }
+        }
+        while (userSelected > 2);
+
+        TimeUnit.SECONDS.sleep(5);
+        rt.exec("cmd.exe /k \"slmgr /skms kms8.msguides.com /c \"slmgr /ato");
+
+    }
+    public static int MenuData(){
+        int selection;
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Select windows version");
+        System.out.println("-----------------------\n");
+        System.out.println("1 - Windows 10 Pro");
+        System.out.println("2 - Windows 10 Pro N");
+        System.out.println("3 - Windows 10 Home");
+        System.out.println("4 - Windows 10 Home N");
+        System.out.println("5 - Windows 10 Enterprise");
+
+        selection = scan.nextInt();
+        System.out.println("You selected "); return selection;
+
+    }
+}
